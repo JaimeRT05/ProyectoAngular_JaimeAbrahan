@@ -1,0 +1,7 @@
+<h2>Lista de Usuarios</h2>
+<button (click)="toggleLista()">{{ mostrarLista ? 'Ocultar' : 'Mostrar' }} Usuarios</button>
+<ul *ngIf="mostrarLista">
+  <li *ngFor="let usuario of usuarios">
+    {{ usuario.nombre }} - <span *ngIf="usuario.activo">Activo</span><span *ngIf="!usuario.activo">Inactivo</span>
+  </li>
+</ul>
