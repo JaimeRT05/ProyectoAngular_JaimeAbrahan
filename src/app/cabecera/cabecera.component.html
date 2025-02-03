@@ -1,1 +1,19 @@
-<p>cabecera works!</p>
+<nav>
+    <ul class="menu">
+      <li *ngFor="let item of menu" class="menu-item">
+        <span (click)="toggleSubmenu(item)">{{ item.titulo }}</span>
+        <!-- Mostrar submenú si tiene contenido -->
+        <ul class="submenu" *ngIf="item.submenus.length > 0">
+          <li *ngFor="let submenu of item.submenus" (click)="seleccionarSubmenu(submenu, $event)">
+            {{ submenu }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <!-- Contenido dinámico basado en la selección -->
+  <div *ngIf="submenuSeleccionado === 'Estructurales'">
+    <app-estructurales></app-estructurales>
+  </div>
+  

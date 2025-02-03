@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DirectivasAbrahanComponent } from "./directivas-abrahan/directivas-abrahan.component";
 import { CabeceraComponent } from "./cabecera/cabecera.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ DirectivasAbrahanComponent, CabeceraComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [CabeceraComponent, FooterComponent]
 })
 export class AppComponent {
   title = 'ProyectoNuevoAngular';

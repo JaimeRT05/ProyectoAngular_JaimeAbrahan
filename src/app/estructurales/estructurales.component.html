@@ -1,0 +1,53 @@
+<h2>Ejemplos de Directivas Estructurales Abrahan</h2>
+
+<!-- *ngIf -->
+<section>
+  <h3>*ngIf - Usuario autenticado</h3>
+  <button (click)="toggleAutenticacion()">
+    {{ usuarioAutenticado ? 'Cerrar sesión' : 'Iniciar sesión' }}
+  </button>
+  <p *ngIf="usuarioAutenticado; else noAutenticado">
+    Bienvenido, estás autenticado.
+  </p>
+  <ng-template #noAutenticado>
+    <p>No estás autenticado. Por favor, inicia sesión.</p>
+  </ng-template>
+</section>
+
+<!-- *ngFor -->
+<section>
+  <h3>*ngFor - Lista de tareas</h3>
+  <input
+    type="text"
+    placeholder="Nueva tarea"
+    #tareaInput
+    (keyup.enter)="agregarTarea(tareaInput.value); tareaInput.value = ''"
+  />
+  <button (click)="agregarTarea(tareaInput.value); tareaInput.value = ''">
+    Agregar
+  </button>
+  <ul>
+    <li *ngFor="let tarea of tareas; index as i">
+      {{ tarea }}
+      <button (click)="eliminarTarea(i)">Eliminar</button>
+    </li>
+  </ul>
+</section>
+
+<!-- *ngSwitch -->
+<section>
+  <h3>*ngSwitch - Rol de usuario</h3>
+  <label for="rol">Selecciona un rol:</label>
+  <select [(ngModel)]="rolUsuario" id="rol">
+    <option value="admin">Admin</option>
+    <option value="editor">Editor</option>
+    <option value="viewer">Viewer</option>
+  </select>
+
+  <div [ngSwitch]="rolUsuario">
+    <p *ngSwitchCase="'admin'">Tienes acceso completo al sistema.</p>
+    <p *ngSwitchCase="'editor'">Puedes editar contenido, pero no administrarlo.</p>
+    <p *ngSwitchCase="'viewer'">Solo puedes ver el contenido.</p>
+    
+  </div>
+</section>
