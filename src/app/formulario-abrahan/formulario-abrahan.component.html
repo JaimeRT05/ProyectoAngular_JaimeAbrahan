@@ -1,0 +1,27 @@
+<h2>Formulario de Tareas Abrahan</h2>
+
+<form (submit)="agregarTarea($event)" class="form-container">
+  <label>Nombre de la tarea:</label>
+  <input type="text" name="nombreTarea" [(ngModel)]="nombreTarea" required />
+
+  <label>Descripción de la tarea:</label>
+  <textarea name="descripcionTarea" [(ngModel)]="descripcionTarea" required></textarea>
+
+  <label>Fecha de vencimiento:</label>
+  <input type="date" name="fechaVencimiento" [(ngModel)]="fechaVencimiento" required />
+
+  <label>Prioridad:</label>
+  <select name="prioridad" [(ngModel)]="prioridad">
+    <option value="Baja">Baja</option>
+    <option value="Media">Media</option>
+    <option value="Alta">Alta</option>
+  </select>
+
+  <label>Responsable de la tarea:</label>
+  <input type="text" name="responsable" [(ngModel)]="responsable" required />
+
+  <button type="submit">Agregar Tarea</button>
+</form>
+
+<!-- Mensaje de éxito -->
+<p *ngIf="mensaje" class="mensaje-exito">{{ mensaje }}</p>
