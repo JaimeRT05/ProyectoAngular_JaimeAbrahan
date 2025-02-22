@@ -1,0 +1,149 @@
+/* Contenedor del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Encabezados */
+h2 {
+    text-align: center;
+}
+
+/* Campos de entrada y botones */
+input, select, button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Ajuste del área de texto */
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Mensaje de éxito */
+.mensaje-exito {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    background: #e8ffe8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Contenedor del select */
+.select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Tabla de usuario seleccionado */
+.tabla-usuario {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+/* Encabezados de la tabla */
+.tabla-usuario th {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Celdas de la tabla */
+.tabla-usuario td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Resaltar fila al pasar el cursor */
+.tabla-usuario tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Contenedor del selector de usuarios */
+.select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Estilos para el select */
+.select-container select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para el label */
+.select-container label {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Encabezado centrado */
+.select-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
+}
+

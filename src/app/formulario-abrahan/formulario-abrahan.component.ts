@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './formulario-abrahan.component.html',
   styleUrls: ['./formulario-abrahan.component.css']
 })
-export class FormularioAbrahamComponent {
+export class FormularioAbrahanComponent {
   nombreTarea: string = '';
   descripcionTarea: string = '';
   fechaVencimiento: string = '';
