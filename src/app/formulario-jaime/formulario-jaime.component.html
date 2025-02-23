@@ -1,0 +1,39 @@
+<section>
+    <h2>Formulario de Envío</h2>
+
+    <form (ngSubmit)="procesarFormulario()" class="form-container">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="pedido.nombre" name="nombre">
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" [(ngModel)]="pedido.apellidos" name="apellidos">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="pedido.email" name="email">
+
+        <label for="domicilio">Domicilio:</label>
+        <input type="text" id="domicilio" [(ngModel)]="pedido.domicilio" name="domicilio">
+
+        <label for="codigoPostal">Código Postal:</label>
+        <input type="text" id="codigoPostal" [(ngModel)]="pedido.codigoPostal" name="codigoPostal">
+
+        <label for="municipio">Municipio:</label>
+        <input type="text" id="municipio" [(ngModel)]="pedido.municipio" name="municipio">
+
+        <label for="provincia">Provincia:</label>
+        <input type="text" id="provincia" [(ngModel)]="pedido.provincia" name="provincia">
+
+        <button type="submit">Guardar Pedido</button>
+    </form>
+</section>
+
+<!-- Lista de Pedidos Registrados -->
+<section>
+    <h2>Lista de Pedidos</h2>
+    <ul>
+        <li *ngFor="let p of pedidos">
+            <strong>{{ p.nombre }} {{ p.apellidos }}</strong> - {{ p.email }} - {{ p.domicilio }}, {{ p.codigoPostal }},
+            {{ p.municipio }}, {{ p.provincia }}
+        </li>
+    </ul>
+</section>
