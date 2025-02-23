@@ -1,0 +1,33 @@
+<section>
+    <h2>Registro de Mascotas</h2>
+
+    <label for="usuario">Selecciona un usuario:</label>
+    <select id="usuario" [(ngModel)]="usuarioSeleccionado" (change)="obtenerMascotas()">
+        <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nombre }}</option>
+    </select>
+
+    <form (ngSubmit)="registrarMascota()" class="form-container">
+        <label for="nombre">Nombre de la Mascota:</label>
+        <input type="text" id="nombre" [(ngModel)]="nuevaMascota.nombre" name="nombre">
+
+        <label for="especie">Especie:</label>
+        <input type="text" id="especie" [(ngModel)]="nuevaMascota.especie" name="especie">
+
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" [(ngModel)]="nuevaMascota.raza" name="raza">
+
+        <button type="submit">Registrar Mascota</button>
+    </form>
+</section>
+
+<!-- Lista de Mascotas -->
+<section>
+    <h2>Lista de Mascotas</h2>
+    <ul>
+        <li *ngFor="let mascota of mascotas">
+            <strong>{{ mascota.nombre }}</strong> - {{ mascota.especie }} - {{ mascota.raza }}
+            <button (click)="editarMascota(mascota)">Editar</button>
+            <button (click)="eliminarMascota(mascota.id)">Eliminar</button>
+        </li>
+    </ul>
+</section>
