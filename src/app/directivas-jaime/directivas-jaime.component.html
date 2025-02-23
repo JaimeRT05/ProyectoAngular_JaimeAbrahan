@@ -1,0 +1,32 @@
+<section>
+    <h2>Ejemplos de Directivas de Atributo</h2>
+
+    <section>
+        <h3>1. Cambia el color del fondo al pasar el ratón</h3>
+        <p appResaltar="green" class="directiva-box">Pasa el ratón por encima de aquí</p>
+    </section>
+
+    <section>
+        <h3>2. Cambia el texto al pasar el ratón</h3>
+        <p appCambiarTexto nuevoTexto="¡Has pasado el ratón!" class="directiva-box">
+            Pasa el ratón por este texto
+        </p>
+    </section>
+
+    <section>
+        <h3>3. Rotar la imagen al hacer clic</h3>
+        <div class="img-container">
+            <img appRotarElemento 
+                src="https://upload.wikimedia.org/wikipedia/en/3/3f/Real_Betis_logo.svg" 
+                alt="Escudo del Betis"
+                class="escudo-img"/>
+        </div>
+    </section>
+
+    <section>
+        <h3>4. Cambia el tamaño del texto si haces doble clic</h3>
+        <p appCambiarTamano tamanoGrande="32px" tamanoNormal="18px" class="directiva-box">
+            Haz doble clic en este texto
+        </p>
+    </section>
+</section>

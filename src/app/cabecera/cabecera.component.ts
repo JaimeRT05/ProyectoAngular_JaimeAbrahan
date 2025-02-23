@@ -4,10 +4,12 @@ import { EstructuralesComponent } from '../estructurales/estructurales.component
 import { FormularioAbrahanComponent } from '../formulario-abrahan/formulario-abrahan.component';
 import { EnrutamientoAbrahanComponent } from '../enrutamiento-abrahan/enrutamiento-abrahan.component';
 
+import { DirectivasJaimeComponent } from '../directivas-jaime/directivas-jaime.component';
+
 @Component({
   selector: 'app-cabecera',
   standalone: true, // Declarar como componente standalone
-  imports: [CommonModule, EstructuralesComponent, FormularioAbrahanComponent,EnrutamientoAbrahanComponent], // Importar los componentes aquí
+  imports: [CommonModule, EstructuralesComponent, FormularioAbrahanComponent,EnrutamientoAbrahanComponent, DirectivasJaimeComponent], // Importar los componentes aquí
   templateUrl: './cabecera.component.html',
   styleUrls: ['./cabecera.component.css']
 })

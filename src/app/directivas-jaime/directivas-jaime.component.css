@@ -1,0 +1,50 @@
+/* General */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Títulos */
+h2, h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Caja de ejemplos de directivas */
+.directiva-box {
+    padding: 12px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 10px auto;
+    background-color: #e9ecef;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Imagen con efecto de rotación */
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.escudo-img {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+p[appCambiarTamano] {
+    cursor: pointer;
+}
