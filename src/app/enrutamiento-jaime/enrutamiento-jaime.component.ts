@@ -53,20 +53,40 @@ export class EnrutamientoJaimeComponent {
   }
   
 
-  editarMascota(mascota: any) {
-    this.mascotaEditando = { ...mascota };
-  }
 
-  actualizarMascota() {
-    this.mascotaService.actualizarMascota(this.mascotaEditando.id, this.mascotaEditando).subscribe(() => {
-      this.obtenerMascotas();
-      this.mascotaEditando = null;
+editarMascota(mascota: any) {
+  this.mascotaEditando = { ...mascota }; // Clona la mascota para edición
+}
+
+
+actualizarMascota() {
+  if (this.mascotaEditando) {
+    this.mascotaService.actualizarMascota(this.mascotaEditando.id, this.mascotaEditando).subscribe({
+      next: () => {
+        console.log('Mascota actualizada correctamente');
+        this.obtenerMascotas(); // Recargar la lista
+        this.mascotaEditando = null; // Limpiar el formulario
+      },
+      error: (error) => {
+        console.error('Error al actualizar mascota:', error);
+      }
     });
   }
+}
 
-  eliminarMascota(id: number) {
-    this.mascotaService.eliminarMascota(id).subscribe(() => {
-      this.mascotas = this.mascotas.filter(m => m.id !== id);
+
+eliminarMascota(id: number) {
+  if (confirm('¿Estás seguro de que quieres eliminar esta mascota?')) {
+    this.mascotaService.eliminarMascota(id).subscribe({
+      next: () => {
+        console.log('Mascota eliminada correctamente');
+        this.mascotas = this.mascotas.filter(m => m.id !== id); // Eliminar de la lista
+      },
+      error: (error) => {
+        console.error('Error al eliminar mascota:', error);
+      }
     });
   }
+}
+
 }

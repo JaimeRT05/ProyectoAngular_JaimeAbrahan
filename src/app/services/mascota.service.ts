@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MascotaService {
-  private apiUrl = 'http://localhost:9999/api/mascotas';
+  
+  private apiUrl = 'http://localhost:9999/api/mascotas'; // URL del backend
 
   constructor(private http: HttpClient) {}
 
