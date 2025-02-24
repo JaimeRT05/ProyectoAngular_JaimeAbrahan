@@ -42,7 +42,42 @@
 
   <!-- Botón para eliminar usuario -->
   <button *ngIf="usuarioSeleccionado" class="delete-button" (click)="eliminarUsuario()">Eliminar Usuario</button>
+  <button *ngIf="usuarioSeleccionado" class="edit-button" (click)="editarUsuario(usuarioSeleccionado)">Editar Usuario</button>
 </div>
+
+<!-- Formulario de Edición -->
+<form *ngIf="usuarioEditando" (ngSubmit)="modificarUsuario()" class="form-container">
+  <h2>Editar Usuario</h2>
+
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="usuarioEditando.nombre" name="nombre" required>
+
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" [(ngModel)]="usuarioEditando.apellidos" name="apellidos" required>
+
+  <label for="dni">DNI:</label>
+  <input type="text" id="dni" [(ngModel)]="usuarioEditando.dni" name="dni" required>
+
+  <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+  <input type="date" id="fechaNacimiento" [(ngModel)]="usuarioEditando.fechaNacimiento" name="fechaNacimiento" required>
+
+  <label for="genero">Género:</label>
+  <select id="genero" [(ngModel)]="usuarioEditando.genero" name="genero" required>
+    <option value="Hombre">Hombre</option>
+    <option value="Mujer">Mujer</option>
+    <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+  </select>
+
+  <label for="username">Nombre de Usuario:</label>
+  <input type="text" id="username" [(ngModel)]="usuarioEditando.username" name="username" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" [(ngModel)]="usuarioEditando.email" name="email" required>
+
+  <button type="submit">Guardar Cambios</button>
+</form>
+
+
 
 <table *ngIf="usuarioSeleccionado" class="tabla-usuario">
   <tr>
