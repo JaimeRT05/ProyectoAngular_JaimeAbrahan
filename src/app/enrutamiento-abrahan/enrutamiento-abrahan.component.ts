@@ -81,6 +81,28 @@ export class EnrutamientoAbrahanComponent {
       );
     }
   }
+
+  usuarioEditando: any = null; // Usuario en edición
+
+editarUsuario(usuario: any) {
+  this.usuarioEditando = { ...usuario }; // Clonar usuario seleccionado
+}
+
+modificarUsuario() {
+  if (!this.usuarioEditando) return;
+
+  this.usuarioService.actualizarUsuario(this.usuarioEditando.id, this.usuarioEditando).subscribe({
+    next: () => {
+      console.log('Usuario actualizado correctamente');
+      this.obtenerUsuarios(); // Recargar la lista
+      this.usuarioEditando = null; // Limpiar formulario de edición
+    },
+    error: error => {
+      console.error('Error al actualizar usuario:', error);
+    }
+  });
+}
+
   ngOnInit() {
     this.obtenerUsuarios(); // Cargar la lista de usuarios cuando el componente se inicializa
   }
