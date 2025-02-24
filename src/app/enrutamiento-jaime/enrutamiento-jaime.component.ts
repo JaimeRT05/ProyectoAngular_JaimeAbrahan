@@ -22,6 +22,7 @@ export class EnrutamientoJaimeComponent {
 
   ngOnInit() {
     this.obtenerUsuarios();
+    this.obtenerTodasLasMascotas();
   }
 
   obtenerUsuarios() {
@@ -36,6 +37,17 @@ export class EnrutamientoJaimeComponent {
         this.mascotas = data;
       });
     }
+  }
+
+  obtenerTodasLasMascotas() {
+    this.mascotaService.obtenerTodasLasMascotas().subscribe(
+      (data) => {
+        this.mascotas = data;
+      },
+      (error) => {
+        console.error('Error al obtener todas las mascotas:', error);
+      }
+    );
   }
 
   registrarMascota() {
@@ -59,7 +71,7 @@ editarMascota(mascota: any) {
 }
 
 
-actualizarMascota() {
+guardarCambios() {
   if (this.mascotaEditando) {
     this.mascotaService.actualizarMascota(this.mascotaEditando.id, this.mascotaEditando).subscribe({
       next: () => {

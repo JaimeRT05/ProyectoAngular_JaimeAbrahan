@@ -15,6 +15,11 @@ export class MascotaService {
     return this.http.get<any[]>(`${this.apiUrl}/${usuarioId}`);
   }
 
+  obtenerTodasLasMascotas(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}`);
+  }
+  
+
   registrarMascota(mascota: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, mascota);
   }

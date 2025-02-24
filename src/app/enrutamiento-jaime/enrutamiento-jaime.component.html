@@ -20,9 +20,8 @@
     </form>
 </section>
 
-<!-- Lista de Mascotas -->
 <section>
-    <h2>Lista de Mascotas</h2>
+    <h2>Lista de Todas las Mascotas</h2>
     <ul>
         <li *ngFor="let mascota of mascotas">
             <strong>{{ mascota.nombre }}</strong> - {{ mascota.especie }} - {{ mascota.raza }}
@@ -30,4 +29,21 @@
             <button (click)="eliminarMascota(mascota.id)">Eliminar</button>
         </li>
     </ul>
+</section>
+
+<!-- Formulario de Edición -->
+<section *ngIf="mascotaEditando">
+    <h2>Editar Mascota</h2>
+    <form (ngSubmit)="guardarCambios()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="mascotaEditando.nombre" name="nombre">
+
+        <label for="especie">Especie:</label>
+        <input type="text" id="especie" [(ngModel)]="mascotaEditando.especie" name="especie">
+
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" [(ngModel)]="mascotaEditando.raza" name="raza">
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
 </section>
